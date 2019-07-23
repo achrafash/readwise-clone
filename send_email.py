@@ -17,3 +17,20 @@ s.login(email_address, passsword)
 # create a message
 msg = MIMEMultipart()
 
+message = ""
+# Code to get the highlights and organise them into message is going to go there
+
+# setup the parameters of the message
+msg['From']=email_address
+msg['To']=str(input('Enter email address of the receiver: '))
+msg['Subject']="Your daily highlights"
+
+# add-in the message body
+msg.attach(MIMEText(message))
+
+# send the message via the server set up earlier.
+s.send_message(msg)
+
+del msg
+
+s.quit()
