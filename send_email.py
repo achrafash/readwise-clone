@@ -3,6 +3,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from highlights import get_library
+
 s = smtplib.SMTP(host='smtp.office365.com', port=587)
 #s = smtplib.SMTP(host='smtp.gmail.com', port=465) for gmail address
 
@@ -19,6 +21,7 @@ msg = MIMEMultipart()
 
 message = ""
 # Code to get the highlights and organise them into message is going to go there
+library = get_library()
 
 # setup the parameters of the message
 msg['From']=email_address
