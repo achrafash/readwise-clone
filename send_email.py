@@ -10,8 +10,8 @@ s = smtplib.SMTP(host='smtp.office365.com', port=587)
 
 s.starttls()
 
-email_address = str(input('Enter your email address: '))
-password = str(input('Enter your password: '))
+email_address = # enter the email address from which the mail will be sent
+password = # enter the password of this address
 
 #login to your email account
 s.login(email_address, passsword)
@@ -24,11 +24,11 @@ message = ""
 library = get_library()
 
 # setup the parameters of the message
-msg['From']=email_address
-msg['To']=str(input('Enter email address of the receiver: '))
-msg['Subject']="Your daily highlights"
+msg['From'] = email_address
+msg['To'] = email_address # you can change this address to the address you want to receive the email
+msg['Subject']= "Your daily highlights" # change the subject of the email if you want
 
-# add-in the message body
+# add in the message body
 msg.attach(MIMEText(message))
 
 # send the message via the server set up earlier.
